@@ -134,10 +134,21 @@ String.method('isalnum', function(){ // Pythonic
     return (this.search(/[^a-zA-Z0-9]/) == -1);
 });
 
+String.method('find', function(sub, start, end){ // Pythonic
+    if(start === undefined){
+        start = 0;
+    }
+    if(end === undefined){
+        end = this.length;
+    }
+    var str = this.slice(start, end);	
+	return str.search(sub);
+});
+
 
 // TODO: Add all strings methods
 /*
-'find', 'format', 'index',
+'format', 'index',
 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper',
 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust',
 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill'
