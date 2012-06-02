@@ -10,4 +10,6 @@ if(start===undefined){start=0;}
 if(end===undefined){end=this.length;}
 var str=this.slice(start,end);return str.indexOf(suffix,str.length-suffix.length)!==-1;});String.method('expandtabs',function(tabsize){if(tabsize===undefined){tabsize=8;}
 return this.replace(String.fromCharCode(9),' '.repeat(tabsize));});String.method('isalnum',function(){if(this==""){return false;}
-return(this.search(/[^a-zA-Z0-9]/)==-1);});
+return(this.search(/[^a-zA-Z0-9]/)==-1);});String.method('find',function(sub,start,end){if(start===undefined){start=0;}
+if(end===undefined){end=this.length;}
+var str=this.slice(start,end);return str.search(sub);});

@@ -141,8 +141,8 @@ String.method('find', function(sub, start, end){ // Pythonic
     if(end === undefined){
         end = this.length;
     }
-    var str = this.slice(start, end);	
-	return str.search(sub);
+    var str = this.slice(start, end);
+    return str.search(sub);
 });
 
 
