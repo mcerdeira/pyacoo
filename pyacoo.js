@@ -25,8 +25,9 @@ Function.prototype.method = function (name, func) {
 //
 ///////////////////////////////////
 
-// TODO
-
+Number.method('integer', function() { // Just cool
+    return Math[this < 0 ? 'ceiling' : 'floor'](this);
+});
 
 ///////////////////////////////////
 //
@@ -34,11 +35,11 @@ Function.prototype.method = function (name, func) {
 //
 ///////////////////////////////////
 
-String.method('trim', function ( ) {  // VB like
+String.method('trim', function() {  // VB like
     return this.replace(/^\s+|\s+$/g, '');
 });
 
-String.method('left', function (n){ // VB like
+String.method('left', function(n){ // VB like
     if (n <= 0){
         return "";
     }else if (n > String(this).length){
@@ -48,7 +49,7 @@ String.method('left', function (n){ // VB like
     }
 });
 
-String.method('right', function (n){ // VB like
+String.method('right', function(n){ // VB like
     if (n <= 0){
         return "";
     }else if (n > String(this).length){
