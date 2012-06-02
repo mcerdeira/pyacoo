@@ -21,6 +21,15 @@ Function.prototype.method = function (name, func) {
 
 ///////////////////////////////////
 //
+// Extends on Numeric
+//
+///////////////////////////////////
+
+// TODO
+
+
+///////////////////////////////////
+//
 // Extends on String
 //
 ///////////////////////////////////
@@ -126,7 +135,7 @@ String.method('isalnum', function(){ // Pythonic
 });
 
 
-
+// TODO: Add all strings methods
 /*
 'find', 'format', 'index',
 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper',
