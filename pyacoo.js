@@ -97,9 +97,22 @@ String.method('count', function(sub, start, end){
 	return(n); 	
 });
 
+String.method('endswith', function(suffix, start, end){
+	if(suffix === undefined || suffix == ""){
+		return true;
+	}
+	if(start === undefined){
+		start = 0;
+	}
+	if(end === undefined){
+		end = this.length; 
+	}		
+	var str = this.slice(start, end);	
+	return str.indexOf(suffix, str.length - suffix.length) !== -1;	
+});
 
 /*
-'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 
+'expandtabs', 'find', 'format', 'index', 'isalnum', 
 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper',
 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 
 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill'
