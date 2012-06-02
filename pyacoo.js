@@ -115,7 +115,7 @@ String.method('expandtabs', function(tabsize){
     if(tabsize === undefined){
 		tabsize = 8;
 	}	
-	return this.replace(String.fromCharCode(9), 'p'.repeat(tabsize));	
+	return this.replace(String.fromCharCode(9), ' '.repeat(tabsize));	
 });
 
 /*
