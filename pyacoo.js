@@ -21,6 +21,20 @@ Function.prototype.method = function (name, func) {
 
 ///////////////////////////////////
 //
+// Extends on Array
+//
+///////////////////////////////////
+
+Array.method('reduce', function (f, value) { // Just cool
+    var i;
+    for (i = 0; i < this.length; i += 1) {
+        value = f(this[i], value);
+    }
+    return value;
+});
+
+///////////////////////////////////
+//
 // Extends on Numeric
 //
 ///////////////////////////////////
@@ -144,6 +158,21 @@ String.method('find', function(sub, start, end){ // Pythonic
     }
     var str = this.slice(start, end);
     return str.search(sub);
+});
+
+String.method('urlparts', function(){ // Just cool
+	var parse_url = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;	
+	var result = parse_url.exec(url);			
+	var obj;		
+	obj.url = (result[0]) ? result[i] : null;
+	obj.scheme = (result[1]) ? result[i] : null;
+	obj.slash = (result[2]) ? result[i] : null;
+	obj.host = (result[3]) ? result[i] : null;
+	obj.port = (result[4]) ? result[i] : null;
+	obj.path = (result[5]) ? result[i] : null;
+	obj.query = (result[6]) ? result[i] : null;
+	obj.hash = (result[7) ? result[i] : null;
+	return obj;
 });
 
 
